@@ -1,0 +1,313 @@
+.hmprjcts{
+    padding: 60px 0 75px 0;
+}
+.hmprjctsList{
+    width: 100%;
+    background-color: rgb(240, 240, 240,0.5);
+    border-radius: 50px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+    row-gap: 15px;
+}
+
+.hmprjctsList__link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 50px;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    color: var(--charcoal-grey);
+    column-gap: 15px;
+    background-color: transparent;
+    width: max-content;
+}
+.hmprjctsList__link.active{
+    background-color: var(--main);
+    color: var(--white);
+}
+.hmprjctsList{
+    display: flex;
+    align-items: center;
+}
+.hmprjctsCard{
+    height: 470px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+.hmprjctsCard::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+    opacity: 0.47;
+    z-index: 1;
+}
+.hmprjctsCard__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease-in-out;
+}
+.hmprjctsCard:hover .hmprjctsCard__img{
+    transform: scale(1.4);
+    transition: all 0.5s ease-in-out;
+}
+.hmprjctsCard__content{
+    position: absolute;
+    padding: 35px 35px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+}
+.hmprjctsCard__h{
+    font-size: 1.3rem;
+    color: var(--white);
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    margin-bottom: 15px;
+}
+.hmprjctsCard__h:hover{
+    color: var(--main);
+}
+.hmprjctsCardminibox{
+    width: 35px;
+    height: 35px;
+    position: relative;
+    z-index: 0;
+    background-color: rgba(254,254,254,0.2);
+    color: var(--white);
+}
+.hmprjctsCardmini__h{
+    font-size: 1.3rem;
+    color: var(--white);
+    display: flex;
+    align-items: flex-end;
+    column-gap: 5px;
+}
+.hmprjctsCardmini{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+.hmprjctsCardmini__h span{
+    font-size: 1rem;
+}
+.hmprjctsCard-wrpr{
+    display: flex;
+    align-items: center;
+    column-gap: 35px;
+}
+.hmprjctsCard-wrpr2{
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    justify-content: space-between;
+}
+.hmprjctsCard__linkmini{
+    width: 50px;
+    height: 50px;
+    color: var(--white);
+    position: relative;
+    z-index: 0;
+}
+.hmprjctsCard__linkmini::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    background-color: var(--main);
+    opacity: 0.72;
+    border-radius: 50%;
+}
+.hmprjctsCard__link{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+.hmprjctsCard__link:hover .hmprjctsCard__linkmini::after{
+    background-color: var(--white);
+}
+.hmprjctsCard-outr{
+    row-gap: 20px;
+}
+
+.hmprjcts-tab-content{
+    margin-bottom: 45px;
+}
+.hmprjcts__link{
+    margin: 0 auto;
+    width: fit-content;
+    padding: 12px 35px;
+    font-size: 1.2rem;
+    color: var(--contrast);
+    position: relative;
+    border-radius: 60px;
+    z-index: 0;
+}
+.hmprjcts__link::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 60px;
+    background-color: var(--white);
+    opacity: 0.4;
+    z-index: -1;
+}
+.hmprjcts__link:hover::after{
+    background-color: var(--main);
+}
+.hmprjcts__link:hover{
+    color: var(--white);
+}
+@media(max-width:1799px){
+    .hmprjctsList__link {
+        padding: 18px 30px;
+        font-size: 1rem;
+        color: var(--charcoal-grey);
+        column-gap: 15px;
+        background-color: transparent;
+        width: max-content;
+    }
+    .hmprjctsCard {
+        height: 400px;
+    }
+    .hmprjctsCard__content {
+        padding: 22px 22px;
+    }
+    .hmprjcts {
+        padding: 35px 0 45px 0;
+    }
+    .hmprjcts__link {
+        padding: 8px 35px;
+        font-size: 1.1rem;
+    }
+}
+@media(max-width:1599px){
+    .hmprjctsList__link {
+        padding: 14px 30px;
+        font-size: 1rem;
+        column-gap: 10px;
+    }
+    .hmprjctsCard {
+        height: 400px;
+    }
+    .hmprjctsCard__content {
+        padding: 25px 25px;
+    }
+    .hmprjctsCard__h {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    .hmprjctsCardmini__h {
+        font-size: 1.1rem;
+    }
+    .hmprjctsCard__linkmini {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+    .hmprjcts {
+        padding: 40px 0 40px 0;
+    }
+}
+@media(max-width:1399px){
+    .hmprjctsCard {
+        height: 330px;
+    }
+    .hmprjctsCardmini__h {
+        font-size: 0.9rem;
+    }
+    .hmprjctsCardmini__h span {
+        font-size: 0.7rem;
+    }
+    .hmprjctsCardmini {
+        column-gap: 3px;
+    }
+    .hmprjctsCardminibox {
+        width: 30px;
+        height: 30px;
+        font-size: 0.7rem;
+    }
+    .hmprjctsCard__linkmini {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+}
+@media(max-width:1199px){
+    .hmprjcts {
+        padding: 30px 0 30px 0;
+    }
+    .hmprjctsCard {
+        height: 290px;
+    }
+    .hmprjctsCard__content {
+        padding: 15px 15px;
+    }
+    .hmprjcts-tab-content {
+        margin-bottom: 25px;
+    }
+    .hmprjcts__link {
+        padding: 10px 30px;
+        font-size: 0.9rem;
+    }
+    .hmprjctsList__link {
+        padding: 14px 25px;
+        font-size: 1rem;
+        column-gap: 7px;
+    }
+}
+@media(max-width:1023px){
+    .hmprjctsList {
+        margin-bottom: 25px;
+    }
+    .hmprjctsList__link {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+@media(max-width:767px){
+    .hmprjctsList{
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+    }
+    .hmprjctsList::-webkit-scrollbar{
+        display: none;
+    }
+    .hmprjctsList__link {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+    .hmprjctsCard__h {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+}
+
+.dark .hmprjctsList{
+    background-color: var(--dark-background-color3);
+}
+.dark .hmprjctsList__link{
+    color: var(--white);
+}
+.dark .hmprjcts__link{
+    color: var(--white);
+}

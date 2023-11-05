@@ -1,0 +1,79 @@
+/* Genral Styling Start */
+@import url('flaticon.css');
+
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  font-size: var(--font-medium);
+  margin-inline: auto;
+}
+:root{
+  /* font size */
+  --font-small: 14px;
+  --font-medium: 16px;
+  --font-big: 18px;
+  /* Font Family */
+  --tajawal: "Tajawal", Arial, sans-serif;
+  --libre:  'Libre Baskerville', Arial, sans-serif;
+  --dubai:  'Dubai', Arial, sans-serif;
+  --nunito-sans : 'Nunito Sans', sans-serif;
+  --lora: 'Lora', sans-serif ;
+  --lato: 'Lato', sans-serif;
+  --dm-sans: 'DM Sans', sans-serif;
+  --gilroy: 'Gilroy', sans-serif;
+  --cairo: 'Cairo', sans-serif;
+  /* paragraph colors */
+  --pearl:#EFF2F3;
+  --white: #fff;
+  --black: #000;
+  --mid-black: #151515;
+  --pearl:#EFF2F3;
+  --off-white: #F0F0F0;
+  --white-smoke: #F5F5F5;
+  --light-grey: #BFBFBF;
+  --charcoal-grey: #3B3C3C;
+  --davy-grey: #3B3C3C;
+  --turquoise-blue: #4BCFFD;
+  --cyan-blue: #83C4F4;
+  --grey: #979292;
+  --grey-2: #848484;
+  /* dark mode */
+  --dark-background-color1: #141B22;
+  --dark-background-color2: #1C242C;
+  --dark-background-color3: #353F4A;
+  --dark-background-color4: #1D2730;
+  --dark-background-color5: #2C343B;
+  --dark-background-color6: #343E49;
+  --dark-background-color7: #120E0D;
+  --dark-background-color8: #2C3640;
+  --dark-background-color9: #1F262E;
+  --dark-border-color:#65686A;
+  --dark-para-color: #cfcfcf;
+}
+body{
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  position: relative;
+  font-family: var(--tajawal);
+  overflow-x: hidden !important;
+}
+input,
+button{
+  border: none;
+  outline: none;
+}
+body.dark{
+  background-color: var(--dark-background-color1);
+}
+.swiper-button-next:after, .swiper-button-prev:after{
+  display: none !important;
+}
+.hide{
+  display: none;
+}

@@ -1,0 +1,17 @@
+// $(".inputF").focus(function(){
+//     $(this).nextAll('.form-input-sm-name').eq(0).show()
+// })
+// $(".inputF").focusout(function(){
+//     $(this).nextAll('.form-input-sm-name').eq(0).hide()
+// })
+// $(".bannerBox1__link").click(function(){
+//     $(this).toggleClass("active");
+//     $(".bannerform").toggleClass("active");
+// })
+// $("body").click(function(){
+//     $(".bannerBox1__link").removeClass("active");
+//     $(".bannerform").removeClass("active");
+// })
+// $(".bannerBox1__link,.bannerform").click(function(event){
+//     event.stopPropagation();
+// })
