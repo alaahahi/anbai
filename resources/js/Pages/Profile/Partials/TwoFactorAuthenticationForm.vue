@@ -14,6 +14,7 @@ const props = defineProps({
     requiresConfirmation: Boolean,
 });
 
+const page = usePage();
 const enabling = ref(false);
 const confirming = ref(false);
 const disabling = ref(false);
@@ -26,7 +27,7 @@ const confirmationForm = useForm({
 });
 
 const twoFactorEnabled = computed(
-    () => ! enabling.value && usePage().props.auth.user?.two_factor_enabled,
+    () => ! enabling.value && page.props.auth.user?.two_factor_enabled,
 );
 
 watch(twoFactorEnabled, () => {
@@ -200,7 +201,7 @@ const disableTwoFactorAuthentication = () => {
                         <PrimaryButton
                             v-if="confirming"
                             type="button"
-                            class="mr-3"
+                            class="me-3"
                             :class="{ 'opacity-25': enabling }"
                             :disabled="enabling"
                         >
@@ -211,7 +212,7 @@ const disableTwoFactorAuthentication = () => {
                     <ConfirmsPassword @confirmed="regenerateRecoveryCodes">
                         <SecondaryButton
                             v-if="recoveryCodes.length > 0 && ! confirming"
-                            class="mr-3"
+                            class="me-3"
                         >
                             Regenerate Recovery Codes
                         </SecondaryButton>
@@ -220,7 +221,7 @@ const disableTwoFactorAuthentication = () => {
                     <ConfirmsPassword @confirmed="showRecoveryCodes">
                         <SecondaryButton
                             v-if="recoveryCodes.length === 0 && ! confirming"
-                            class="mr-3"
+                            class="me-3"
                         >
                             Show Recovery Codes
                         </SecondaryButton>

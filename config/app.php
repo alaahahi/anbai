@@ -82,9 +82,8 @@ return [
     | to any of the locales which will be supported by the application.
     |
     */
-    
-    'locale' =>  $_COOKIE['lang']??'en',
 
+    'locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -142,7 +141,7 @@ return [
 
     'maintenance' => [
         'driver' => 'file',
-        // 'store'  => 'redis',
+        // 'store' => 'redis',
     ],
 
     /*
