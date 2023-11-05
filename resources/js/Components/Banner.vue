@@ -1,16 +1,13 @@
 <script setup>
-import { ref, watchEffect } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { usePage } from '@inertiajs/vue3';
 
-const page = usePage();
 const show = ref(true);
-const style = ref('success');
-const message = ref('');
+const style = computed(() => usePage().props.jetstream.flash?.bannerStyle || 'success');
+const message = computed(() => usePage().props.jetstream.flash?.banner || '');
 
-watchEffect(async () => {
-    style.value = page.props.jetstream.flash?.bannerStyle || 'success';
-    message.value = page.props.jetstream.flash?.banner || '';
-    show.value = true;
+watch(message, async () => {
+  show.value = true;
 });
 </script>
 
@@ -30,15 +27,15 @@ watchEffect(async () => {
                             </svg>
                         </span>
 
-                        <p class="ms-3 font-medium text-sm text-white truncate">
+                        <p class="ml-3 font-medium text-sm text-white truncate">
                             {{ message }}
                         </p>
                     </div>
 
-                    <div class="shrink-0 sm:ms-3">
+                    <div class="shrink-0 sm:ml-3">
                         <button
                             type="button"
-                            class="-me-1 flex p-2 rounded-md focus:outline-none sm:-me-2 transition"
+                            class="-mr-1 flex p-2 rounded-md focus:outline-none sm:-mr-2 transition"
                             :class="{ 'hover:bg-indigo-600 focus:bg-indigo-600': style == 'success', 'hover:bg-red-600 focus:bg-red-600': style == 'danger' }"
                             aria-label="Dismiss"
                             @click.prevent="show = false"
