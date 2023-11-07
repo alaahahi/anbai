@@ -45,7 +45,7 @@ const switchLocale = async (locale) => {
 </script>
 
 <template>
-	<div class="bodybg__box bodybg__box-home">
+	<!-- <div class="bodybg__box bodybg__box-home">
 		<img src="/assets/images/body-bg.png" alt="" class="bodybg__img">
 	</div>
 	<header class="header">
@@ -118,5 +118,64 @@ const switchLocale = async (locale) => {
 				</div>
             </div>
         </div>
+	</header> -->
+
+	<header class="header">
+		<div class="container-fluid">
+			<div class="headerWrpr">
+				<a href="/" class="logo">
+					<img src="assets/images/logo.png" alt="" class="logo__img">
+				</a>
+				<ul class="navlist">
+					<div class="navlistCloseBtn flex-a"><i class="fa-solid fa-xmark"></i></div>
+					<li class="navlist_item">
+						<a href="/" class="navlist__link active">الرّئيسة</a>
+					</li>
+					<li class="navlist_item">
+						<a href="our-story.html" class="navlist__link">حكايتنا</a>
+					</li>
+					<li class="navlist_item">
+						<a href="our-clubs.html" class="navlist__link">النّوادي</a>
+					</li>
+					<li class="navlist_item">
+						<a href="our-events.html" class="navlist__link">الفعاليّات</a>
+					</li>
+					<li class="navlist_item">
+						<a href="our-library.html" class="navlist__link">المكتبة</a>
+					</li>
+					<li class="navlist_item">
+						<a href="blog.html" class="navlist__link">المدوّنة</a>
+					</li>
+					<li class="navlist_item">
+						<a href="contact-us.html" class="navlist__link">اتّصل بنا</a>
+					</li>
+					<li class="navlist_item">
+						<div class="navlist_item-wrpr flex-i">
+							<a href="#" class="navlist__btn flex-a"> تحديد مستوى لطفلك </a>
+							<a href="#" class="navlist__btn"> تحميل الملف التعريفي</a>
+						</div>
+					</li>
+				</ul>
+				<div class="hdrBox3 flex-i">
+					<a href="cart.html" class="addtocrdBtn flex-a r-50">
+						<span class="addtocrdBtn-ab">05</span>
+						<i class="fa-duotone fa-cart-shopping"></i>
+					</a>
+					<div class="langbox">
+                        <div class="langboxmini ar">
+                            <i class="fa-solid fa-earth-americas"></i>
+                            <p class="langboxmini__p">Ar</p>
+                        </div>
+                        <div class="langboxmini en active">
+                            <i class="fa-solid fa-earth-americas"></i>
+                            <p class="langboxmini__p">En</p>
+                        </div>
+                    </div>
+					<div class="hdrBox3NavListbtn">
+						<i class="fa-solid fa-bars-progress"></i>
+					</div>
+				</div>
+			</div>
+		</div>
 	</header>
 </template>
