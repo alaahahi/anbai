@@ -28,7 +28,7 @@
         @inertiaHead
     </head>
     <body class="{{app()->getLocale()=='ar'?'rtl':'ltr'}}">
-
+        <div class="app">
         @inertia
 
 
@@ -37,6 +37,6 @@
         <script src="assets/js/home.js"></script>
         {{-- <script src="/assets/js/public/scripts.js"></script> --}}
     
-
+        </div>
     </body>
 </html>
