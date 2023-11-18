@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import { useI18n } from "vue-i18n";
 import { Link } from '@inertiajs/inertia-vue3';
-
+import ResponsiveNav from '@/Components/ResponsiveNav.vue';
 import DarkModeToggle from '@/Components/DarkToggle.vue';
 import axios from 'axios';
 import {  onMounted, onBeforeUnmount } from "vue";
@@ -45,109 +45,69 @@ const switchLocale = async (locale) => {
 </script>
 
 <template>
-	<!-- <div class="bodybg__box bodybg__box-home">
-		<img src="/assets/images/body-bg.png" alt="" class="bodybg__img">
-	</div>
-	<header class="header">
-        <div class="container-fluid">
-            <div class="hdrwrpr">
-				<a href="/" class="hdrlogobox flex-i">
-					<img :src="$page.props.setting_share.logo" 
-						:alt="$page.props.setting_share.site_title[$page.props.locale].slice(0,20)" 
-						v-if="$page.props.setting_share.logo" class="hdrlogobox__img">
-				</a>
-				<div class="hdrwrprside2">
-					<ul class="hdrnavLst"  :class="{ 'active': navActive }" @click="closeNav"> 
-						<div class="hdrnavLst-closebtn" >
-							<i class="fa-solid fa-xmark"></i>
-						</div>
-						
-						<li  class="hdrnavLst__item " v-for="customize in $page.props.customize_share" v-show="customize.active_navbar == '1'">
-
-							<div v-if="customize.base_module_name == 'services'" class="flex-i hdrnavLstdropdown__btn-wrpr">
-								<Link :href="customize.link" class="hdrnavLst__item hdrnavLst__link" :class="{'active' : $page.component === customize.component}">
-									{{ customize.title[$page.props.locale] }}
-								</Link>
-								<button class="hdrnavLstdropdown__btn">
-									<i class="fa-solid fa-caret-down"></i>
-								</button>
-								<div class="hdrnavLstdropdown">
-
-									<Link :href="'/service/' + service.id + '/show'" class="hdrnavLstdropdown__link" v-for="(service, i) in $page.props.services_share">
-										{{ service.title[$page.props.locale].slice(0,30) }}
-									</Link>
-
-								</div>
-							</div>
-
-							<Link v-else :href="customize.link" class="hdrnavLst__item hdrnavLst__link" 
-							:class="{'active' : $page.component === customize.component}"> {{ customize.title[$page.props.locale] }}</Link>
-
-						</li>
-
-
-
-
-					</ul>
-					<div class="hdrbox3">
-						<ul class="hdrbox3Smlist" :class="{ 'active': navActive }">
-
-							<li class="hdrbox3Smlist__item" v-for="social in $page.props.social_share">
-								<a target="_blank" class="hdrbox3Smlist__link flex-a r-50"  :href="social.link_first + social.link_last" v-html="social.icon"></a>
-							</li>
-
-						</ul>
-						<div class="themcontrol">
-							<div class="lang flex-a">
-								<div v-if="language=='en'" class="lang__box arabic" @click="switchLocale('ar')">
-									<i class="fa-sharp fa-regular fa-earth-americas"></i>
-									<p class="lang__text">Ar</p>
-								</div>
-								<div v-if="language=='ar'" class="lang__box english" @click="switchLocale('en')">
-									<i class="fa-sharp fa-regular fa-earth-americas"></i>
-									<p class="lang__text">En </p>
-								</div>
-							</div>
-							<div class="themcontrol-sep"></div>
-							<DarkModeToggle ></DarkModeToggle>					
-						</div>
-					</div>
-					<div class="nvbtn">
-						<i class="fa-regular fa-bars" @click="openNav"></i>
-					</div>
-				</div>
-            </div>
-        </div>
-	</header> -->
-
 	<header class="header">
 		<div class="container-fluid">
 			<div class="headerWrpr">
 				<a href="/" class="logo">
-					<img src="assets/images/logo.png" alt="" class="logo__img">
+					<img src="/assets/images/logo.png" alt="" class="logo__img">
 				</a>
 				<ul class="navlist">
 					<div class="navlistCloseBtn flex-a"><i class="fa-solid fa-xmark"></i></div>
 					<li class="navlist_item">
-						<a href="/" class="navlist__link active">الرّئيسة</a>
+						<ResponsiveNav
+							:href="route('/')"
+							:active="route().current('/')"
+						>
+						الرّئيسة
+						</ResponsiveNav>
 					</li>
 					<li class="navlist_item">
-						<a href="our-story.html" class="navlist__link">حكايتنا</a>
+						<ResponsiveNav
+							:href="route('our-story')"
+							:active="route().current('our-story')"
+						>
+						حكايتنا
+						</ResponsiveNav>
 					</li>
 					<li class="navlist_item">
-						<a href="our-clubs.html" class="navlist__link">النّوادي</a>
+						<ResponsiveNav
+							:href="route('our-clubs')"
+							:active="route().current('our-clubs')"
+						>
+						النّوادي
+						</ResponsiveNav>
 					</li>
 					<li class="navlist_item">
-						<a href="our-events.html" class="navlist__link">الفعاليّات</a>
+						<ResponsiveNav
+							:href="route('our-events')"
+							:active="route().current('our-events')"
+						>
+						الفعاليّات
+						</ResponsiveNav>
 					</li>
 					<li class="navlist_item">
-						<a href="our-library.html" class="navlist__link">المكتبة</a>
+						<ResponsiveNav
+							:href="route('our-library')"
+							:active="route().current('our-library')"
+						>
+						المكتبة
+						</ResponsiveNav>
 					</li>
 					<li class="navlist_item">
-						<a href="blog.html" class="navlist__link">المدوّنة</a>
+						<ResponsiveNav
+							:href="route('blog')"
+							:active="route().current('blog')"
+						>
+						المدوّنة
+						</ResponsiveNav>
 					</li>
 					<li class="navlist_item">
-						<a href="contact-us.html" class="navlist__link">اتّصل بنا</a>
+						<ResponsiveNav
+							:href="route('contact-us')"
+							:active="route().current('contact-us')"
+						>
+						اتّصل بنا
+						</ResponsiveNav>
 					</li>
 					<li class="navlist_item">
 						<div class="navlist_item-wrpr flex-i">
@@ -157,10 +117,10 @@ const switchLocale = async (locale) => {
 					</li>
 				</ul>
 				<div class="hdrBox3 flex-i">
-					<a href="cart.html" class="addtocrdBtn flex-a r-50">
+					<ResponsiveNav class="addtocrdBtn flex-a r-50"	:href="route('cart')">
 						<span class="addtocrdBtn-ab">05</span>
-						<i class="fa-duotone fa-cart-shopping"></i>
-					</a>
+						<i class="fa-duotone fa-cart-shopping" style="font-size: 16px;margin-top:10px ;"></i>
+					</ResponsiveNav>
 					<div class="langbox">
                         <div class="langboxmini ar">
                             <i class="fa-solid fa-earth-americas"></i>

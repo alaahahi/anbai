@@ -2,6 +2,14 @@
 import {ref, onMounted} from "vue";
 import "intersection-observer"; // for cross-browser support
 import MainLayout from '@/Layouts/MainLayout.vue';
+import HomeBanner from '@/Components/HomeBanner.vue';
+import HomeStory from '@/Components/HomeStory.vue';
+import HomeClients from '@/Components/HomeClients.vue';
+import HomeClubs from '@/Components/HomeClubs.vue';
+import HomeEvents from '@/Components/HomeEvents.vue';
+import HomeParentOpinion from '@/Components/HomeParentOpinion.vue';
+import HomeSuccess from '@/Components/HomeSuccess.vue';
+import HomeTesting from '@/Components/HomeTesting.vue';
 import { Link } from '@inertiajs/inertia-vue3';
 import Vue3AutoCounter from 'vue3-autocounter';
 
@@ -95,8 +103,14 @@ function submit() {
 
 
 <template>
-  <MainLayout>
-
-
+  <MainLayout :isHome="true">
+    <HomeBanner />
+    <HomeStory />
+    <HomeClubs />
+    <HomeParentOpinion />
+    <HomeTesting />
+    <HomeEvents />
+    <HomeClients />
+    <HomeSuccess />
   </MainLayout>
 </template>

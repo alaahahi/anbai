@@ -77,12 +77,12 @@ export default {
 <div>
 <!-- hmsuccess end -->
 <footer class="footer">
-		<img src="assets/images/ftrcloud.png" alt="" class="footer__bg">
+		<img src="/assets/images/ftrcloud.png" alt="" class="footer__bg">
 		<div class="container">
 			<div class="footer-wrpr">
 				<div class="ftrBox1">
 					<a href="/" class="ftrBox1__link flex-a">
-						<img src="assets/images/footer-logo.png" alt="" class="ftrBox1__img">
+						<img src="/assets/images/footer-logo.png" alt="" class="ftrBox1__img">
 					</a>
 					<p class="ftrBox1__p">
 						بيت عربي يفتح لأطفال العالم أبواب الحكايات والفنون لقراءة أحلى وعربي أجمل وطفولة أكثر إبداعاً

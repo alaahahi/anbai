@@ -15,55 +15,47 @@ class PagesController extends Controller
        // $client = new Client( $this->url, 'masterKey');
        // $results = $client->stats();
         //dd($results);
-        return Inertia::render('home');   
+        return Inertia::render('Home');   
 
     }
     public function home()
     {
-        return Inertia::render('home');   
+        return Inertia::render('Home');   
     }
-    public function about(Request $request)
+    public function ourStory(Request $request)
     {
-        return Inertia::render('About');   
+        return Inertia::render('OurStory');   
     }
-    public function team(Request $request)
+    public function ourClubs(Request $request)
     {
-        return Inertia::render('Team');   
+        return Inertia::render('OurClubs');   
     }
-    public function services(Request $request)
+    public function ourEvents(Request $request)
     {
-        return Inertia::render('Services');   
+        return Inertia::render('OurEvents');   
     }
-    public function services_details(Request $request)
+    public function ourLibrary(Request $request)
     {
-        return Inertia::render('ServicesDetails');   
-    }
-    public function projects(Request $request)
-    {
-        return Inertia::render('Projects');   
-    }
-    public function project_details(Request $request)
-    {
-        return Inertia::render('ProjectDetails');   
-    }
-    public function careers(Request $request)
-    {
-        return Inertia::render('Careers');   
-    }
-    public function careers_details(Request $request)
-    {
-        return Inertia::render('CareersDetails');   
+        return Inertia::render('OurLibrary');   
     }
     public function blog(Request $request)
     {
         return Inertia::render('Blog');   
     }
-    public function blog_details(Request $request)
+    public function contactUs(Request $request)
+    {
+        return Inertia::render('ContactUs');   
+    }
+    public function cart(Request $request)
+    {
+        return Inertia::render('Cart');   
+    }
+    public function productDetails(Request $request)
+    {
+        return Inertia::render('ProductDetails');   
+    }
+    public function blogDetails(Request $request)
     {
         return Inertia::render('BlogDetails');   
-    }
-    public function contact(Request $request)
-    {
-        return Inertia::render('Contact');   
     }
 }
