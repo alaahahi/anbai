@@ -22,9 +22,8 @@ use App\Http\Controllers\LocaleController;
 Route::get('/lang/{locale}', function ($locale) {
     app()->setLocale($locale);
     session()->put('locale', $locale);
-
-    // return "geztLocale:" . app()->getLocale() . "/session:" . session('locale');
-    return redirect()->back();
+    setcookie('lang',$locale, time() + (60 * 24 * 30), '/'); 
+    return 'ok';
 });
 
 

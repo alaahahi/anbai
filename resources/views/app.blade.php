@@ -11,7 +11,6 @@
         <link href="/assets/css//bootstrap.min.css" rel="stylesheet">
         <!-- fonts -->
         <!-- Main Stylesheet File -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
         <link href="/assets/css/ahsan.css" rel="stylesheet">
         <link href="/assets/css/style.css" rel="stylesheet">
         <link href="/assets/css/home.css" rel="stylesheet">

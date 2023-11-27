@@ -1,10 +1,39 @@
+<script setup>
+import { Swiper, SwiperSlide } from "swiper/vue";
+
+import "swiper/css";
+let swiperRef = null;
+
+const setSwiperRef = (swiper) => {
+swiperRef = swiper;
+};
+const slideNext = () => {
+swiperRef.slideNext();
+};
+
+const slidePrev = () => {
+swiperRef.slidePrev();
+};
+
+
+</script>
 <template>
   	<section class="parentOpinion">
 		<div class="container">
 			<h2 class="section-hdng section-hdng--parentOpinion">آراء الأهالي</h2>
 			<div class="parentOpinionSl swiper">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
+				<swiper
+				style="padding-top: 15px;"
+				ref="{swiperRef}"
+				:navigation="true"
+				:slides-per-view="1"
+				:centeredSlides="true"
+				:space-between="30"
+				:loop="true"
+				:speed="800"
+				@swiper="setSwiperRef"
+				>
+					<swiper-slide class="swiper-slide">
 						<div class="prnOpnSlide">
 							<i class="fa-solid fa-quote-right prnOpnSlidequote"></i>
 							<p class="prnOpnSlide__para">
@@ -12,8 +41,8 @@
 							</p>
 						</div>
 						<p class="prnOpnSlide-p">أم أماريس</p>
-					</div>
-					<div class="swiper-slide">
+					</swiper-slide>
+					<swiper-slide class="swiper-slide">
 						<div class="prnOpnSlide">
 							<i class="fa-solid fa-quote-right prnOpnSlidequote"></i>
 							<p class="prnOpnSlide__para">
@@ -21,13 +50,13 @@
 							</p>
 						</div>
 						<p class="prnOpnSlide-p">أم أماريس</p>
-					</div>
+					</swiper-slide>
+				</swiper>
+				<div class="swiper-button-prev parentOpinionSlArr parentOpinionSlArr2 flex-a r-50" @click="slidePrev">
+					<i class="fa-sharp fa-solid fa-chevron-left "></i>
 				</div>
-				<div class="swiper-button-prev parentOpinionSlArr parentOpinionSlArr2 flex-a r-50">
+				<div class="swiper-button-next parentOpinionSlArr parentOpinionSlArr1 flex-a r-50" @click="slideNext">
 					<i class="fa-sharp fa-solid fa-chevron-right"></i>
-				</div>
-				<div class="swiper-button-next parentOpinionSlArr parentOpinionSlArr1 flex-a r-50">
-					<i class="fa-sharp fa-solid fa-chevron-left"></i>
 				</div>
 			</div>
 		</div>

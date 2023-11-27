@@ -23,42 +23,39 @@ const i18n = useI18n();
 let language =ref(i18n.locale.value);
 
 
-
 const switchLocale = async (locale) => {
 	
       try {
-        const response = await axios.post(`/change-locale/${locale}`);
-        
-        if (response.data.success) {
-			language.value = locale; 
-			i18n.locale.value = locale;
+        const response = await axios.get(`/lang/${locale}`);
+		language.value = locale; 
+		i18n.locale.value = locale;
           localStorage.setItem('lang', locale);
 		  window.location.reload();
-        } else {
-          console.error('Failed to change locale');
-        }
+  
       } catch (error) {
         console.error('An error occurred:', error);
       }
 	};
 
+
 </script>
 
 <template>
-	<header class="header">
+	<header class="header" >
 		<div class="container-fluid">
 			<div class="headerWrpr">
 				<a href="/" class="logo">
 					<img src="/assets/images/logo.png" alt="" class="logo__img">
 				</a>
-				<ul class="navlist">
-					<div class="navlistCloseBtn flex-a"><i class="fa-solid fa-xmark"></i></div>
+				<ul class="navlist" :class="{'active':navActive}"  @click="closeNav">
+					<div class="navlistCloseBtn flex-a" @click="closeNav"><i class="fa-solid fa-xmark"></i></div>
 					<li class="navlist_item">
 						<ResponsiveNav
 							:href="route('/')"
 							:active="route().current('/')"
 						>
-						الرّئيسة
+						{{ $t('home') }}
+						
 						</ResponsiveNav>
 					</li>
 					<li class="navlist_item">
@@ -119,19 +116,19 @@ const switchLocale = async (locale) => {
 				<div class="hdrBox3 flex-i">
 					<ResponsiveNav class="addtocrdBtn flex-a r-50"	:href="route('cart')">
 						<span class="addtocrdBtn-ab">05</span>
-						<i class="fa-duotone fa-cart-shopping" style="font-size: 16px;margin-top:10px ;"></i>
+						<i class="fa-duotone fa-cart-shopping" style="font-size: 16px;margin-top:10px;"></i>
 					</ResponsiveNav>
 					<div class="langbox">
-                        <div class="langboxmini ar">
+                          <div class="langboxmini ar" @click="switchLocale('ar')" :class="{'active':language=='en'}">
                             <i class="fa-solid fa-earth-americas"></i>
                             <p class="langboxmini__p">Ar</p>
                         </div>
-                        <div class="langboxmini en active">
+                        <div class="langboxmini en " @click="switchLocale('en')" :class="{'active':language=='ar'}">
                             <i class="fa-solid fa-earth-americas"></i>
                             <p class="langboxmini__p">En</p>
                         </div>
                     </div>
-					<div class="hdrBox3NavListbtn">
+					<div class="hdrBox3NavListbtn" @click="openNav">
 						<i class="fa-solid fa-bars-progress"></i>
 					</div>
 				</div>
