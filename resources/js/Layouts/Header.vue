@@ -58,22 +58,15 @@ const switchLocale = async (locale) => {
 						
 						</ResponsiveNav>
 					</li>
-					<li class="navlist_item">
-						<ResponsiveNav
-							:href="route('our-story')"
-							:active="route().current('our-story')"
-						>
-						حكايتنا
-						</ResponsiveNav>
-					</li>
-					<li class="navlist_item">
+					
+					<!-- <li class="navlist_item">
 						<ResponsiveNav
 							:href="route('our-clubs')"
 							:active="route().current('our-clubs')"
 						>
 						النّوادي
 						</ResponsiveNav>
-					</li>
+					</li> -->
 					<li class="navlist_item">
 						<ResponsiveNav
 							:href="route('our-events')"
