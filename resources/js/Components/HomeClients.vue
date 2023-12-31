@@ -1,6 +1,5 @@
 <script setup>
 import { Swiper, SwiperSlide } from "swiper/vue";
-import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
 let swiperRef = null;
@@ -29,17 +28,13 @@ swiperRef.slidePrev();
 				<swiper
 				style="padding-top: 15px;"
 				ref="{swiperRef}"
-				:modules="[Autoplay]"
 				:navigation="true"
 				:slides-per-view="7"
 				:centeredSlides="true"
 				:space-between="30"
 				:loop="true"
 				:speed="800"
-				:autoplay="{
-				delay: 1000,
-				disableOnInteraction: false,
-				}"
+	"
 				@swiper="setSwiperRef"
 				>
 					<swiper-slide class="swiper-slide">

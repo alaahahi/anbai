@@ -14,7 +14,6 @@ import { Link } from '@inertiajs/inertia-vue3';
 import Vue3AutoCounter from 'vue3-autocounter';
 
 import { Swiper, SwiperSlide } from "swiper/vue";
-import { Autoplay } from "swiper/modules";
 import { useForm } from '@inertiajs/vue3'
 
 const openForm = ref(0);
@@ -43,7 +42,6 @@ defineProps({
     },
 })
 
-const modules = [Autoplay];
 
 // Import Swiper styles
 import "swiper/css";

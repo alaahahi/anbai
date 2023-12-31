@@ -2,7 +2,6 @@
 import MainLayout from '@/Layouts/MainLayout.vue';
 
 import { Swiper, SwiperSlide } from "swiper/vue";
-import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
 let swiperRef = null;
@@ -70,7 +69,6 @@ defineProps({
 			<div class="prdetRelSl swiper">
 				<swiper
 				ref="{swiperRef}"
-				:modules="[Autoplay]"
 				:navigation="true"
 				:slides-per-view="4"
 				:space-between="10"
@@ -78,10 +76,7 @@ defineProps({
 				:speed="800"
 				@swiper="setSwiperRef"
         style="padding: 20px 0;"
-        :autoplay="{
-				delay: 1000,
-				disableOnInteraction: false,
-				}"
+    
 				> 
 					<swiper-slide class="swiper-slide">
 						<div class="ourlibraryCrd">
