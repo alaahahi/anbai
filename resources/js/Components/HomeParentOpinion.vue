@@ -30,7 +30,6 @@ swiperRef.slidePrev();
 				:centeredSlides="true"
 				:space-between="30"
 				:loop="true"
-				:speed="800"
 				@swiper="setSwiperRef"
 				>
 					<swiper-slide class="swiper-slide">

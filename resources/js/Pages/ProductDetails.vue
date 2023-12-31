@@ -73,7 +73,6 @@ defineProps({
 				:slides-per-view="4"
 				:space-between="10"
 				:loop="true"
-				:speed="800"
 				@swiper="setSwiperRef"
         style="padding: 20px 0;"
     
