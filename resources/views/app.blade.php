@@ -18,23 +18,23 @@
     
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
-
+        <script src="/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="/assets/js/scripts.js"></script>
+        <script src="/assets/js/home.js"></script>
     
     
         @routes
         @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
-        @inertiaHead
     </head>
     <body class="{{app()->getLocale()=='ar'?'rtl':'ltr'}}">
         <div class="app">
         @inertia
 
 
-        <script src="/assets/js/bootstrap.bundle.min.js"></script>
-        <script src="/assets/js/scripts.js"></script>
-        <script src="/assets/js/home.js"></script>
-        {{-- <script src="/assets/js/public/scripts.js"></script> --}}
-    
+      
         </div>
     </body>
+
+    {{-- <script src="/assets/js/public/scripts.js"></script> --}}
+
 </html>

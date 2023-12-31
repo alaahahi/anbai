@@ -67,7 +67,7 @@ const switchLocale = async (locale) => {
 						النّوادي
 						</ResponsiveNav>
 					</li> -->
-					<li class="navlist_item">
+					<!-- <li class="navlist_item">
 						<ResponsiveNav
 							:href="route('our-events')"
 							:active="route().current('our-events')"
@@ -90,7 +90,7 @@ const switchLocale = async (locale) => {
 						>
 						المدوّنة
 						</ResponsiveNav>
-					</li>
+					</li> -->
 					<li class="navlist_item">
 						<ResponsiveNav
 							:href="route('contact-us')"
